@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
-const Books = () => {
+const Book = (props) => {
   const [books, setBooks] = useState([]);
+  
+  const listtype = props.location.listtype.encoded_name.list_name_encoded;
+  const listname = props.location.listtype.ordinal_name.list_name;
+  
+  //const apikey = process.env.REACT_APP_NYTBOOKS_API_KEY;
+  //console.log("-" + apikey + "-");
+  //REACT_APP_NYTBOOKS_API_KEY
+  //IOUk8duIqqNKjccPiRj0HQOcpAZaRXtV
 
   useEffect(() => {
     const fetchBooks = async () => {
+      
       const res = await axios.get(
-        "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=IOUk8duIqqNKjccPiRj0HQOcpAZaRXtV"
+        'https://api.nytimes.com/svc/books/v3/lists/current/' + listtype + '.json?api-key=IOUk8duIqqNKjccPiRj0HQOcpAZaRXtV'
       );
       setBooks(res.data.results.books);
-      //console.log(res.data.results.books);
     };
 
     fetchBooks();
@@ -19,7 +28,7 @@ const Books = () => {
   return (
     <>
       <h1 className="font-bold text-center text-4xl py-5 lg:text-6x1">
-        NYT Bestsellers Books by Tavares
+        '{listname}' Bestsellers Books
       </h1>
       <section className="grid grid-cols-1 gap-10 px-5 pb-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {books.map((book) => {
@@ -92,4 +101,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default Book;
