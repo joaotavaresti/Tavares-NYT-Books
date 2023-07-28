@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const Header = () => (
   <Row>  
       <NavLink to="/">
-        <span><b> > Home</b></span>
+        <span><b> Home</b></span>
       </NavLink>
   </Row>
 );
