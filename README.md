@@ -5,7 +5,7 @@ This fantastic React Single Page Application (SPA) was developed to provide the 
 After cloning the project, please execute the following commands to run this project in your localhost env.
 
 Add a .env file to the root dir containing a parameter 
-REACT_APP_NYTBOOKS_API_KEY="API-KEY-PROVIDED-BY-NYT-API-BOOKS"
+REACT_APP_NYTBOOKS_API_KEY=API-KEY-PROVIDED-BY-NYT-API-BOOKS
 
 In your package.json: change this line:
 "start": "react-scripts start"
