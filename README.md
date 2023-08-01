@@ -18,3 +18,5 @@ npm install react-router-dom@5.2
 npm i react-icons --save axios
 
 npm install --save-dev eslint-config-react-app eslint@^8.0.0
+
+npm install dotenv

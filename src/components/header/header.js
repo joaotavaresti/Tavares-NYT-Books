@@ -1,13 +1,10 @@
-import React from "react";
-import { Row } from 'react-materialize';
-import { NavLink } from 'react-router-dom'
+import React from "react"
+import { NavLink } from "react-router-dom"
 
-const Header = () => (
-  <Row>  
-      <NavLink to="/">
-        <span><b> Home</b></span>
-      </NavLink>
-  </Row>
-);
-
-export default Header;
+export const Header = () => (
+    <div className="flex justify-center p-4">
+        <NavLink to="/">
+            <b> Home</b>
+        </NavLink>
+    </div>
+)
